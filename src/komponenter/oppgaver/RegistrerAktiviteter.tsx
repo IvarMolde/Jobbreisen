@@ -128,7 +128,6 @@ export function RegistrerAktiviteter({
                   type="button"
                   className="knapp knapp-sekundaer"
                   aria-pressed={status[jobb.id] === alt.id}
-                  disabled={resultat === 'ok'}
                   onClick={() => {
                     setStatus((forrige) => ({ ...forrige, [jobb.id]: alt.id }))
                     setResultat(null)
@@ -148,7 +147,6 @@ export function RegistrerAktiviteter({
                   type="button"
                   className="knapp knapp-sekundaer"
                   aria-pressed={frist[jobb.id] === dato}
-                  disabled={resultat === 'ok'}
                   onClick={() => {
                     setFrist((forrige) => ({ ...forrige, [jobb.id]: dato }))
                     setResultat(null)
@@ -161,7 +159,7 @@ export function RegistrerAktiviteter({
           </fieldset>
         )
       })}
-      <button type="button" className="knapp" disabled={resultat === 'ok'} onClick={lagre}>
+      <button type="button" className="knapp" onClick={lagre}>
         Registrer aktivitetene
       </button>
       <TilbakemeldingBoks
