@@ -263,7 +263,7 @@
     {
       "id": "heltid",
       "ord": "heltid",
-      "forklaring": "Du jobber hele uka, som regel 100 %.",
+      "forklaring": "Det motsatte av deltid. Du jobber 100 %, altså en hel stilling.",
       "oversettelser": {
         "uk": "повна зайнятість",
         "en": "full time",
@@ -273,7 +273,7 @@
     {
       "id": "deltid",
       "ord": "deltid",
-      "forklaring": "Du jobber mindre enn 100 %, for eksempel tre dager i uka.",
+      "forklaring": "Du jobber mindre enn 100 %. Det kan være fast 70 %, eller for eksempel helgevakter.",
       "oversettelser": {
         "uk": "неповна зайнятість",
         "en": "part time",
