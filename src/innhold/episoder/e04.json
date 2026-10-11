@@ -437,8 +437,8 @@
       "app": "jobbmagasin",
       "annonseId": "fjordlager",
       "media": {
-        "bilde": "e04-s04-lager.svg",
-        "bildeAlt": "Et lager på Årø og et førerkort.",
+        "bilde": "e04-s04-lager.jpg",
+        "bildeAlt": "Norsk førerkort klasse B på et bord.",
         "lyd": "e04-s04-lager.wav"
       },
       "tekst": "Les annonsen fra Posten Bring i Årødalen.\n\nDu {{maa|må}} ha {{forerkort|førerkort}} klasse B.\n\n{{reisetid|Reisetid}} med buss til Årødalen er kort fra Årølia, lenger fra Kviltorp.",
