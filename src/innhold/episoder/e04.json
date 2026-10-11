@@ -632,11 +632,11 @@
       "klokkeslett": "10:40",
       "app": "jobbmagasin",
       "media": {
-        "bilde": "e04-s06-valg.svg",
-        "bildeAlt": "Tre stillingskort merket som valgt.",
+        "bilde": "e04-s06-valg.jpg",
+        "bildeAlt": "Jobbmagasinet på et bord, med tips og ledige stillinger.",
         "lyd": "e04-s06-valg.wav"
       },
-      "tekst": "Bla i magasinet om du vil.\n\nVelg 2 eller 3 jobber du vil gå videre med.\n\nSenere skal du søke. Nå lagrer du valget.",
+      "tekst": "Denne oppgaven er en øving i spillet Jobbreisen. Du øver på noe du også gjør når du søker jobb i virkeligheten: Du velger hvilke stillinger du vil gå videre med.\n\nDu kan bla i Jobbmagasinet på telefonen hvis du vil lese annonsene en gang til. Selve valget gjør du her på denne siden, i oppgaven under.\n\nSlik gjør du det:\n1. Les oppgaven under.\n2. Trykk på 2 eller 3 stillinger i listen. Navnet på stillingen blir markert når du har valgt den.\n3. Trykk på knappen «Gå videre med disse jobbene».\n\nDa blir valget lagret i spillet. Du søker ikke på ekte jobber nå. Senere i spillet bruker du disse jobbene når du øver på å søke.",
       "valg": [
         {
           "id": "avslutt-e04",
@@ -711,14 +711,14 @@
         {
           "type": "velg_jobber",
           "id": "e04-s06-vj",
-          "instruksjon": "Trykk på to eller tre stillinger. Trykk deretter Gå videre med disse jobbene.",
+          "instruksjon": "Trykk på 2 eller 3 stillinger i listen under. Trykk deretter på «Gå videre med disse jobbene» for å lagre valget i spillet.",
           "min": 2,
           "max": 3,
           "flagg": [
             "valgte_jobber"
           ],
-          "tilbakemeldingRiktig": "Bra. Du har valgt jobber å gå videre med. Valget blir lagret.",
-          "tilbakemeldingFeil": "Velg minst to og høyst tre stillinger."
+          "tilbakemeldingRiktig": "Bra. Valget er lagret i spillet. Du bruker disse jobbene senere når du øver på å søke.",
+          "tilbakemeldingFeil": "Velg minst to og høyst tre stillinger. Trykk deretter på knappen under listen."
         }
       ]
     }
