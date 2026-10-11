@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { AktivitetsplanOverlay } from '../komponenter/aktivitetsplan/AktivitetsplanOverlay'
 import { KlikkbarTekst } from '../komponenter/KlikkbarTekst'
 import { OppgaveVisning } from '../komponenter/oppgaver/OppgaveVisning'
 import { Ordkort } from '../komponenter/Ordkort'
@@ -14,6 +15,7 @@ function kreverReferanseSkjema(valg: Valg): boolean {
 }
 
 export function ScenePanel() {
+  const [aktivitetsplanAapen, setAktivitetsplanAapen] = useState(false)
   const {
     scene,
     episode,
@@ -79,6 +81,13 @@ export function ScenePanel() {
         tekst={(person && scene.tekstPerPerson?.[person.id]) || scene.tekst}
         onVelgOrd={velgOrd}
       />
+      {scene.app === 'aktivitetsplan' ? (
+        <p className="handlinger">
+          <button type="button" className="knapp" onClick={() => setAktivitetsplanAapen(true)}>
+            Åpne Aktivitetsplanen
+          </button>
+        </p>
+      ) : null}
       {scene.oppgaver.map((oppgave, indeks) => (
         <OppgaveVisning
           key={oppgave.id}
@@ -94,6 +103,7 @@ export function ScenePanel() {
           onVelgJobber={settValgteJobber}
           onLagreAktiviteter={lagreAktiviteter}
           onLagreSoknad={lagreSoknad}
+          aktiviteter={fremdrift.aktiviteter}
           ruter={innhold.ruter}
           onLagreReise={lagreReise}
         />
@@ -126,6 +136,10 @@ export function ScenePanel() {
           ))}
         </div>
       ) : null}
+      <AktivitetsplanOverlay
+        open={aktivitetsplanAapen}
+        onLukk={() => setAktivitetsplanAapen(false)}
+      />
     </section>
   )
 }

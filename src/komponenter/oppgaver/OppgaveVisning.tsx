@@ -42,6 +42,7 @@ interface Props {
   onVelgJobber: (ids: string[], flagg: string[]) => void
   onLagreAktiviteter: (aktiviteter: Aktivitet[], flagg: string[]) => void
   onLagreSoknad: (tekst: string, annonseId: string | null, flagg: string[]) => void
+  aktiviteter: Aktivitet[]
   ruter: Ruter
   onLagreReise: (reise: LagretReise, flagg: string[]) => void
 }
@@ -59,6 +60,7 @@ export function OppgaveVisning({
   onVelgJobber,
   onLagreAktiviteter,
   onLagreSoknad,
+  aktiviteter,
   ruter,
   onLagreReise,
 }: Props) {
@@ -159,6 +161,7 @@ export function OppgaveVisning({
           person={person}
           annonser={annonser}
           valgteJobber={valgteJobber}
+          aktiviteter={aktiviteter}
           ferdig={ferdig}
           onSvar={onSvar}
           onLagre={onLagreAktiviteter}

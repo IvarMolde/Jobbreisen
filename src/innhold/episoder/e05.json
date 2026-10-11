@@ -15,17 +15,20 @@
   ],
   "oppsummering": [
     {
-      "tekst": "Åpnet Aktivitetsplanen."
+      "tekst": "Åpnet Aktivitetsplanen på stor skjerm."
     },
     {
-      "tekst": "Leste statusene Skal søke, Sendt søknad, Innkalt til intervju og Avslag."
+      "tekst": "Leste målet og statusene Skal søke, Sendt søknad, Innkalt til intervju og Avslag."
     },
     {
       "tekst": "Øvde på datoer og preposisjoner med tid: den 12. oktober, innen fredag."
     },
     {
-      "tekst": "Registrerte de valgte jobbene med status og frist.",
+      "tekst": "Registrerte de valgte jobbene med status Skal søke og riktig frist.",
       "visHvisFlagg": "aktiviteter_registrert"
+    },
+    {
+      "tekst": "Så kortene på brettet. Telefonen viste det samme."
     },
     {
       "tekst": "Sendte en kort melding til Linn om det du har gjort."
@@ -40,10 +43,10 @@
       "app": "aktivitetsplan",
       "media": {
         "bilde": "e05-s01-plan.svg",
-        "bildeAlt": "En aktivitetsplan med fire kolonner for søknadsstatus.",
+        "bildeAlt": "Aktivitetsplanen med mål, fire kolonner og jobbkort under Skal søke.",
         "lyd": "e05-s01-plan.wav"
       },
-      "tekst": "Åpne {{aktivitet|Aktivitetsplanen}}.\n\nDu ser fire kolonner: Skal søke, Sendt søknad, Innkalt til intervju og Avslag.\n\nLes {{frist|fristen}} i annonsen. Søk {{innen}} datoen.",
+      "tekst": "Hva er {{aktivitet|Aktivitetsplanen}}?\n\nDet er en digital plan der du skriver opp det du skal gjøre for å få jobb. Du ser fire kolonner: Skal søke, Sendt søknad, Innkalt til intervju og Avslag.\n\nI Jobbreisen øver du på denne planen. Det er ikke ekte NAV.\n\nTrykk «Åpne på stor skjerm» på telefonen. Der registrerer du jobbene senere.\n\nLes {{frist|fristen}} i annonsen. Søk {{innen}} datoen.",
       "valg": [
         {
           "id": "til-dato",
@@ -255,7 +258,7 @@
         "bildeAlt": "Et skjema med stjerne ved status og frist.",
         "lyd": "e05-s03-skjema.wav"
       },
-      "tekst": "Fyll ut skjemaet.\n\nVelg status. Velg {{frist}}.\n\nFeltene med stjerne er påkrevd.\n\nNå skal du søke, så status er Skal søke.",
+      "tekst": "Åpne Aktivitetsplanen på stor skjerm.\n\nRegistrer hver jobb du valgte: «En jobb jeg vil søke på».\n\nVelg status Skal søke. Velg {{frist}} fra annonsen.\n\nFeltene med stjerne (*) er påkrevd.\n\nNår du lagrer, ser du kortene på brettet. Telefonen viser det samme.",
       "valg": [
         {
           "id": "til-sms",
@@ -329,7 +332,7 @@
         {
           "type": "registrer_aktiviteter",
           "id": "e05-s03-ra",
-          "instruksjon": "Velg status. Velg frist. Trykk på Registrer aktivitetene.",
+          "instruksjon": "Åpne Aktivitetsplanen. Registrer hver valgt jobb med status Skal søke og riktig frist.",
           "statuser": [
             {
               "id": "skal_soke",
@@ -357,7 +360,7 @@
           "flagg": [
             "aktiviteter_registrert"
           ],
-          "tilbakemeldingRiktig": "Bra. Jobbene ligger under Skal søke. Fristen er datoen fra annonsen.",
+          "tilbakemeldingRiktig": "Bra. Jobbene ligger under Skal søke. Fristen er datoen fra annonsen. Telefonen viser det samme.",
           "tilbakemeldingFeil": "Velg Skal søke. Velg fristen som står i annonsen, ikke i går eller i morgen."
         }
       ]

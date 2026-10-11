@@ -1,13 +1,19 @@
+import { useState } from 'react'
 import { AKTIVITET_STATUS_NAVN, type Aktivitet, type AktivitetStatus } from '../../modell/typer'
+import { AktivitetsplanOverlay } from '../aktivitetsplan/AktivitetsplanOverlay'
 
 const KOLONNER: AktivitetStatus[] = ['skal_soke', 'sendt_soknad', 'innkalt', 'avslag']
 
 interface Props {
   aktiviteter: Aktivitet[]
   soknadTekst: string | null
+  /** Når true (episode 5), vis knapp for stort arbeidsvindu. */
+  kanAapneStor?: boolean
 }
 
-export function Aktivitetsplan({ aktiviteter, soknadTekst }: Props) {
+export function Aktivitetsplan({ aktiviteter, soknadTekst, kanAapneStor = true }: Props) {
+  const [storAapen, setStorAapen] = useState(false)
+
   return (
     <div>
       <header className="hjem-hode">
@@ -15,8 +21,15 @@ export function Aktivitetsplan({ aktiviteter, soknadTekst }: Props) {
         <p>Dine aktiviteter.</p>
       </header>
       <p className="plan-maal">Mål: Registrer jobbene. Følg status og frist.</p>
+      {kanAapneStor ? (
+        <button type="button" className="knapp plan-stor-knapp" onClick={() => setStorAapen(true)}>
+          Åpne på stor skjerm
+        </button>
+      ) : null}
       {aktiviteter.length === 0 ? (
-        <p className="tom-tilstand">Ingen aktiviteter ennå. Registrer jobbene i oppgaven.</p>
+        <p className="tom-tilstand">
+          Ingen aktiviteter ennå. Trykk «Åpne på stor skjerm» for å registrere jobbene.
+        </p>
       ) : (
         <div className="plan-brett">
           {KOLONNER.map((status) => {
@@ -45,6 +58,7 @@ export function Aktivitetsplan({ aktiviteter, soknadTekst }: Props) {
           <p>{soknadTekst}</p>
         </article>
       ) : null}
+      <AktivitetsplanOverlay open={storAapen} onLukk={() => setStorAapen(false)} />
     </div>
   )
 }

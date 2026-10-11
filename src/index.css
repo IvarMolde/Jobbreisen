@@ -4759,3 +4759,256 @@ a {
   }
 }
 
+/* Aktivitetsplan overlay (stor skjerm) */
+.aktivitetsplan-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: grid;
+  place-items: center;
+  padding: 0.65rem;
+  background: rgba(10, 24, 40, 0.62);
+  backdrop-filter: blur(5px);
+  animation: person-hjelp-fade 0.2s ease;
+}
+
+.aktivitetsplan-vindu {
+  --ap-nav: #003057;
+  --ap-teal: #005f73;
+  --ap-amber: #ee9b00;
+  position: relative;
+  width: min(1180px, 100%);
+  max-height: min(94dvh, 960px);
+  overflow: auto;
+  background: #f4f7fa;
+  border-radius: 14px;
+  box-shadow: 0 28px 64px rgba(0, 30, 50, 0.4);
+  color: #1b3a4b;
+  animation: person-hjelp-opp 0.28s cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+
+.aktivitetsplan-vindu-topp {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: var(--ap-nav);
+  color: #fff;
+}
+
+.aktivitetsplan-vindu-topp h2 {
+  margin: 0.15rem 0 0;
+  font-size: 1.35rem;
+}
+
+.aktivitetsplan-oving {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ap-amber);
+  font-weight: 700;
+}
+
+.aktivitetsplan-vindu-topp .knapp-sekundaer {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.aktivitetsplan-banner {
+  margin: 0;
+  padding: 0.7rem 1rem;
+  background: #fff6e6;
+  border-bottom: 1px solid #e2c48a;
+  font-size: 0.95rem;
+}
+
+.aktivitetsplan-maal {
+  margin: 0.85rem 1rem 0;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  border: 1px solid #9bb8c8;
+  border-radius: 12px;
+}
+
+.aktivitetsplan-maal h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--ap-nav);
+}
+
+.aktivitetsplan-maal p {
+  margin: 0;
+}
+
+.aktivitetsplan-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr;
+  gap: 1rem;
+  padding: 0.85rem 1rem 1.25rem;
+  align-items: start;
+}
+
+.aktivitetsplan-sjekkliste {
+  position: sticky;
+  top: 5.5rem;
+  padding: 0.85rem;
+  background: #fff;
+  border: 1px solid #9bb8c8;
+  border-radius: 12px;
+}
+
+.aktivitetsplan-sjekkliste h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  color: var(--ap-nav);
+}
+
+.aktivitetsplan-sjekkliste ol {
+  margin: 0 0 0.85rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.aktivitetsplan-sjekkliste li {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr;
+  gap: 0.4rem;
+  align-items: start;
+  font-size: 0.9rem;
+  color: #4a6070;
+}
+
+.aktivitetsplan-sjekkliste li.er-ferdig {
+  color: #146c43;
+  font-weight: 600;
+}
+
+.aktivitetsplan-sjekk {
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  border: 2px solid #9bb8c8;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.aktivitetsplan-sjekkliste li.er-ferdig .aktivitetsplan-sjekk {
+  border-color: #146c43;
+  background: #e5f4ec;
+  color: #146c43;
+}
+
+.aktivitetsplan-ok {
+  margin: 0 0 0.75rem;
+  color: #146c43;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.aktivitetsplan-toolbar {
+  margin-bottom: 0.65rem;
+}
+
+.aktivitetsplan-toolbar p {
+  margin: 0;
+}
+
+.aktivitetsplan-jobbliste {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.aktivitetsplan-jobbkort {
+  padding: 0.85rem;
+  background: #fff;
+  border: 1px solid #9bb8c8;
+  border-radius: 12px;
+}
+
+.aktivitetsplan-jobbrad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.aktivitetsplan-jobbrad p {
+  margin: 0.25rem 0 0;
+  font-size: 0.92rem;
+}
+
+.aktivitetsplan-skjema {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed #9bb8c8;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.aktivitetsplan-skjema .lbl {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.aktivitetsplan-skjema input {
+  padding: 0.45rem 0.55rem;
+  border: 1px solid #9bb8c8;
+  border-radius: 8px;
+  background: #eef3f7;
+  font: inherit;
+}
+
+.aktivitetsplan-brett-tittel {
+  margin: 0.5rem 0 0.55rem;
+  font-size: 1.05rem;
+  color: var(--ap-nav);
+}
+
+.aktivitetsplan-brett.plan-brett {
+  margin-top: 0;
+}
+
+.plan-stor-knapp {
+  margin: 0.35rem 0 0.75rem;
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.55rem;
+}
+
+@media (max-width: 900px) {
+  .aktivitetsplan-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aktivitetsplan-sjekkliste {
+    position: static;
+  }
+
+  .aktivitetsplan-vindu {
+    max-height: 100dvh;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .aktivitetsplan-overlay {
+    padding: 0;
+    place-items: stretch;
+  }
+}
+
