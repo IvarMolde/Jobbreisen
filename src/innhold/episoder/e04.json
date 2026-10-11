@@ -343,7 +343,7 @@
         "bildeAlt": "Tre bokser: kompetanse, egenskaper og logistikk.",
         "lyd": "e04-s03-match.wav"
       },
-      "tekst": "Vurder annonsen fra Bunnpris i sentrum.\n\nTre deler: {{kompetanse}}, {{egenskap|egenskaper}} og {{logistikk}}.\n\nSe på personen du spiller. Har du butikkerfaring? Kommer du til sentrum med buss?",
+      "tekst": "Når du leser annonsen fra Bunnpris i sentrum, er det tre ting som er ekstra viktige. Da kan du finne ut om jobben passer for deg.\n\n{{kompetanse}} handler om det du har lært, og det du kan fra før. I annonser står det ofte «må» eller «krav». Det betyr at du er nødt til å ha dette for å få jobben. Hvis det står at du må ha førerkort, er det et strengt krav.\n\n{{egenskap|Egenskaper}} handler om hvem du er som person, og hvordan du jobber. Når det står at noe er «en fordel», er det ikke et strengt krav. Det er bare veldig positivt hvis du har det. Du kan søke selv om du mangler det, men det er bedre hvis du har det.\n\n{{logistikk}} handler om hverdagen din. Du må sjekke om du kan komme deg til jobben tidsnok, for eksempel med buss. Du betaler reisen til og fra jobb selv. Hvis du har familie, må du også tenke på barnehage eller skole før og etter arbeidstid. Det er lurt å vite at du klarer dette før du søker.\n\nSe på personen du spiller. Har du butikkerfaring? Kommer du til sentrum med buss?",
       "valg": [
         {
           "id": "til-lager",
