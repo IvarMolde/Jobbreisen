@@ -1,3 +1,4 @@
+import { Episodemeny } from './komponenter/Episodemeny'
 import { Telefon } from './komponenter/telefon/Telefon'
 import { useSpill } from './spill/SpillProvider'
 import { EpisodeVelger } from './sider/EpisodeVelger'
@@ -36,7 +37,10 @@ function Skjerm() {
     <div className="skjerm">
       <SpillMeny />
       <Telefon />
-      {fremdrift.visning === 'scene' ? <ScenePanel /> : <EpisodeVelger />}
+      <div className="skjerm-hoved">
+        {fremdrift.visning === 'scene' ? <ScenePanel /> : <EpisodeVelger />}
+      </div>
+      <Episodemeny />
     </div>
   )
 }

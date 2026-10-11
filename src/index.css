@@ -304,14 +304,34 @@ a {
 
 .skjerm {
   display: grid;
-  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
-  gap: 1.5rem;
-  max-width: 1180px;
+  grid-template-columns: minmax(260px, 380px) minmax(0, 1fr) minmax(250px, 300px);
+  gap: 1.25rem 1.5rem;
+  max-width: 1480px;
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem 1rem 2rem;
   align-items: start;
   overflow-x: clip;
+}
+
+.skjerm-hoved {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.skjerm > .telefon-kolonne {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.skjerm > .skjerm-hoved {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.skjerm > .episodemeny {
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .telefon-kolonne {
@@ -3055,10 +3075,47 @@ a {
   }
 }
 
+@media (max-width: 1179px) {
+  .skjerm {
+    grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+    max-width: 1180px;
+  }
+
+  .skjerm > .episodemeny {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .skjerm > .telefon-kolonne {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .skjerm > .skjerm-hoved {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
 @media (max-width: 860px) {
   .skjerm {
     grid-template-columns: 1fr;
     padding: 0.75rem 0.6rem 1.5rem;
+  }
+
+  .skjerm > .episodemeny {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .skjerm > .telefon-kolonne {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .skjerm > .skjerm-hoved {
+    grid-column: 1;
+    grid-row: 4;
   }
 
   .telefon-kolonne {
@@ -3113,8 +3170,7 @@ a {
 
 @media (min-width: 1280px) {
   .skjerm {
-    max-width: 1280px;
-    gap: 2rem;
+    gap: 1.5rem 2rem;
     padding: 1.5rem 1.25rem 2.5rem;
   }
 }
@@ -3466,12 +3522,529 @@ a {
 
 .skjerm > .spill-nav {
   grid-column: 1 / -1;
+  grid-row: 1;
   position: sticky;
   top: 0;
   z-index: 6;
   margin: 0;
   padding: 0.35rem 0 0.6rem;
   background: var(--bakgrunn);
+}
+
+/* —— Episodemeny (høyre reiseoversikt) —— */
+.episodemeny {
+  position: sticky;
+  top: 3.25rem;
+  align-self: start;
+  z-index: 3;
+  min-width: 0;
+}
+
+.episodemeny-mobil-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #9bb8c9;
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(0, 48, 87, 0.06), rgba(0, 95, 115, 0.04)),
+    #fff;
+  color: var(--marine);
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 48, 87, 0.08);
+}
+
+.episodemeny-mobil-toggle-tekst {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.episodemeny-mobil-toggle-tekst strong {
+  font-size: 0.95rem;
+}
+
+.episodemeny-mobil-toggle-tekst span {
+  color: var(--dempet);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.episodemeny-mobil-meter {
+  display: block;
+  width: 64px;
+  height: 8px;
+  border-radius: 999px;
+  background: #d7e3ea;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.episodemeny-mobil-meter > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #005f73, #ee9b00);
+  transition: width 0.45s ease;
+}
+
+.episodemeny-mobil-chevron {
+  color: var(--teal);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.episodemeny-panel {
+  border: 1px solid #b7c9d4;
+  border-radius: 20px;
+  background:
+    radial-gradient(120% 80% at 0% 0%, rgba(238, 155, 0, 0.12), transparent 55%),
+    linear-gradient(165deg, #f7fbfd 0%, #eef4f8 48%, #e7f0f4 100%);
+  box-shadow: 0 14px 36px rgba(0, 48, 87, 0.12);
+  overflow: hidden;
+  max-height: calc(100dvh - 4.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.episodemeny-hode {
+  padding: 1rem 1rem 0.85rem;
+  border-bottom: 1px solid rgba(0, 48, 87, 0.1);
+  flex-shrink: 0;
+}
+
+.episodemeny-oyenvippe {
+  margin: 0 0 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.episodemeny-hode h2 {
+  margin: 0;
+  color: var(--marine);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.episodemeny-ingress {
+  margin: 0.35rem 0 0.8rem;
+  color: var(--dempet);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.episodemeny-total {
+  margin: 0 0 0.75rem;
+}
+
+.episodemeny-total-rad {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  color: var(--marine);
+  font-size: 0.9rem;
+}
+
+.episodemeny-total-rad strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.episodemeny-bar {
+  display: block;
+  width: 100%;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(0, 48, 87, 0.1);
+  overflow: hidden;
+}
+
+.episodemeny-bar > span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #005f73 0%, #0a7a5c 55%, #ee9b00 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.episodemeny-bar--aktiv {
+  height: 11px;
+  background: rgba(238, 155, 0, 0.2);
+}
+
+.episodemeny-bar--aktiv > span {
+  background: linear-gradient(90deg, #ee9b00, #f4b942);
+}
+
+.episodemeny-her {
+  margin: 0;
+  padding: 0.7rem 0.75rem;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #fff8eb, #fff);
+  border: 1px solid rgba(238, 155, 0, 0.45);
+  box-shadow: 0 0 0 3px rgba(238, 155, 0, 0.12);
+  animation: episodemeny-her-inn 0.45s ease;
+}
+
+@keyframes episodemeny-her-inn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.episodemeny-her-merke {
+  margin: 0 0 0.2rem;
+  display: inline-flex;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  background: var(--amber);
+  color: #3d2a00;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.episodemeny-her-tittel {
+  margin: 0.25rem 0 0.1rem;
+  color: var(--marine);
+  font-weight: 800;
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.episodemeny-her-scene {
+  margin: 0 0 0.55rem;
+  color: var(--dempet);
+  font-size: 0.88rem;
+}
+
+.episodemeny-her-steg {
+  margin: 0.35rem 0 0;
+  color: var(--marine);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.episodemeny-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0.65rem 0.55rem 0.85rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+  flex: 1;
+  min-height: 0;
+}
+
+.episodemeny-punkt {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0.55rem;
+}
+
+.episodemeny-punkt:not([data-siste='true'])::before {
+  content: '';
+  position: absolute;
+  left: 1.35rem;
+  top: 2.35rem;
+  bottom: 0.15rem;
+  width: 2px;
+  background: linear-gradient(180deg, #9bb8c9, #c5d0d6);
+}
+
+.episodemeny-punkt--fullfort:not([data-siste='true'])::before {
+  background: linear-gradient(180deg, #2f9e6b, #9dcfb3);
+}
+
+.episodemeny-punkt--aktiv:not([data-siste='true'])::before {
+  background: linear-gradient(180deg, #ee9b00, #c5d0d6);
+}
+
+.episodemeny-knapp {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  gap: 0.45rem 0.55rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.45rem 0.45rem 0.5rem 0.35rem;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.episodemeny-knapp:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: #9bb8c9;
+  box-shadow: 0 4px 14px rgba(0, 48, 87, 0.08);
+}
+
+.episodemeny-knapp:disabled {
+  cursor: not-allowed;
+  opacity: 0.92;
+}
+
+.episodemeny-punkt--aktiv .episodemeny-knapp {
+  background: #fff;
+  border-color: rgba(238, 155, 0, 0.55);
+  box-shadow:
+    0 0 0 3px rgba(238, 155, 0, 0.14),
+    0 8px 20px rgba(0, 48, 87, 0.1);
+}
+
+.episodemeny-punkt--fullfort .episodemeny-knapp {
+  background: rgba(229, 244, 236, 0.65);
+}
+
+.episodemeny-spor {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.1rem;
+}
+
+.episodemeny-node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: #1a3a52;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.episodemeny-punkt--fullfort .episodemeny-node {
+  background: #146c43;
+}
+
+.episodemeny-punkt--neste .episodemeny-node,
+.episodemeny-punkt--aktiv .episodemeny-node {
+  background: #b45309;
+}
+
+.episodemeny-punkt--aktiv .episodemeny-node {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 0 4px #fff,
+    0 0 0 7px rgba(238, 155, 0, 0.45);
+  animation: episodemeny-node-puls 1.8s ease-in-out infinite;
+}
+
+@keyframes episodemeny-node-puls {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px #fff,
+      0 0 0 7px rgba(238, 155, 0, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px #fff,
+      0 0 0 10px rgba(238, 155, 0, 0.2);
+  }
+}
+
+.episodemeny-punkt--aapen .episodemeny-node {
+  background: #0b5cab;
+}
+
+.episodemeny-punkt--laast .episodemeny-node {
+  background: #9a6a6a;
+}
+
+.episodemeny-innhold {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  padding-top: 0.1rem;
+}
+
+.episodemeny-rad {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.3rem 0.45rem;
+}
+
+.episodemeny-tittel {
+  flex: 1 1 8rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--marine);
+  line-height: 1.25;
+}
+
+.episodemeny-merke {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.episodemeny-merke--fullfort {
+  background: #146c43;
+  color: #fff;
+}
+
+.episodemeny-merke--aktiv,
+.episodemeny-merke--neste {
+  background: var(--amber);
+  color: #3d2a00;
+}
+
+.episodemeny-merke--aapen {
+  background: #0b5cab;
+  color: #fff;
+}
+
+.episodemeny-merke--laast {
+  background: #f0d6d6;
+  color: #6b3030;
+}
+
+.episodemeny-hjelp {
+  color: var(--dempet);
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.episodemeny-stegtekst {
+  color: var(--marine);
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.episodemeny-punkt--laast .episodemeny-tittel,
+.episodemeny-punkt--laast .episodemeny-stegtekst {
+  color: #6b3030;
+}
+
+.episodemeny-scener {
+  list-style: none;
+  margin: 0.15rem 0 0.25rem 3.25rem;
+  padding: 0.35rem 0.4rem 0.2rem;
+  border-left: 2px solid rgba(238, 155, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  animation: episodemeny-her-inn 0.35s ease;
+}
+
+.episodemeny-scene {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.35rem;
+  align-items: start;
+  margin: 0;
+  padding: 0.2rem 0.35rem;
+  border-radius: 8px;
+  color: var(--dempet);
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.episodemeny-scene-nr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 999px;
+  background: #d7e3ea;
+  color: var(--marine);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.episodemeny-scene.er-besokt {
+  color: #14532d;
+}
+
+.episodemeny-scene.er-besokt .episodemeny-scene-nr {
+  background: #c7e6d4;
+  color: #0d5c3b;
+}
+
+.episodemeny-scene.er-naa {
+  background: #fff8eb;
+  color: var(--marine);
+  font-weight: 700;
+}
+
+.episodemeny-scene.er-naa .episodemeny-scene-nr {
+  background: var(--amber);
+  color: #3d2a00;
+}
+
+@media (max-width: 1179px) {
+  .episodemeny {
+    position: sticky;
+    top: 3.1rem;
+    z-index: 5;
+  }
+
+  .episodemeny-mobil-toggle {
+    display: flex;
+  }
+
+  .episodemeny-panel {
+    display: none;
+    margin-top: 0.45rem;
+    max-height: min(70dvh, 560px);
+  }
+
+  .episodemeny-panel.er-aapen {
+    display: flex;
+    animation: episodemeny-her-inn 0.28s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .episodemeny-bar > span,
+  .episodemeny-mobil-meter > span,
+  .episodemeny-her,
+  .episodemeny-scener,
+  .episodemeny-panel.er-aapen,
+  .episodemeny-punkt--aktiv .episodemeny-node {
+    animation: none;
+    transition: none;
+  }
 }
 
 .dok-netto {
@@ -3492,7 +4065,8 @@ a {
   .anrop,
   .hopp-til-innhold,
   .statuslinje,
-  .varsel {
+  .varsel,
+  .episodemeny {
     display: none !important;
   }
 

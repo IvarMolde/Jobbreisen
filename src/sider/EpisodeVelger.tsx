@@ -1,18 +1,17 @@
 import { useSpill } from '../spill/SpillProvider'
+import {
+  episodeErUlast,
+  episodeKortStatus,
+  finnNesteEpisodeId,
+  statusEtikett,
+} from '../spill/episodeStatus'
 
 export function EpisodeVelger() {
   const { innhold, fremdrift, startEpisode, person, aapneSlutt, velgSpillModus } = useSpill()
   const harSlutt = fremdrift.fullforteEpisoder.includes('e11')
   const valgfri = fremdrift.spillModus === 'valgfri'
-
-  const nesteId =
-    innhold.scenario.episoder.find((ep) => {
-      const forrige = innhold.scenario.episoder.find((x) => x.nummer === ep.nummer - 1)
-      const harFil = Boolean(ep.fil)
-      const forrigeOk = !forrige || fremdrift.fullforteEpisoder.includes(forrige.id)
-      const ferdig = fremdrift.fullforteEpisoder.includes(ep.id)
-      return harFil && forrigeOk && !ferdig
-    })?.id ?? null
+  const oversikt = innhold.scenario.episoder
+  const nesteId = finnNesteEpisodeId(oversikt, fremdrift.fullforteEpisoder)
 
   return (
     <section className="panel" id="oppgave-innhold" aria-labelledby="episode-liste-tittel" tabIndex={-1}>
@@ -49,20 +48,27 @@ export function EpisodeVelger() {
       </p>
 
       <div className="liste">
-        {innhold.scenario.episoder.map((ep) => {
-          const forrige = innhold.scenario.episoder.find((x) => x.nummer === ep.nummer - 1)
-          const harFil = Boolean(ep.fil)
-          const forrigeOk = !forrige || fremdrift.fullforteEpisoder.includes(forrige.id)
-          const ferdig = fremdrift.fullforteEpisoder.includes(ep.id)
-          const ulast = harFil && (valgfri || forrigeOk)
-          const erNeste = !valgfri && ep.id === nesteId
-          const statusKlasse = ferdig ? 'fullfort' : erNeste ? 'neste' : ulast ? 'aapen' : 'laast'
+        {oversikt.map((ep) => {
+          const status = episodeKortStatus({
+            ep,
+            episoder: oversikt,
+            fremdrift,
+            nesteId,
+          })
+          const ulast = episodeErUlast(
+            ep,
+            oversikt,
+            fremdrift.fullforteEpisoder,
+            fremdrift.spillModus,
+          )
+          const ferdig = status === 'fullfort'
+          const erNeste = status === 'neste'
 
           return (
             <button
               key={ep.id}
               type="button"
-              className={`kort episodekort episodekort--${statusKlasse}`}
+              className={`kort episodekort episodekort--${status === 'aktiv' ? 'neste' : status}`}
               disabled={!ulast}
               onClick={() => startEpisode(ep.id)}
             >
@@ -71,14 +77,14 @@ export function EpisodeVelger() {
                   {ep.nummer}
                 </span>
                 <span className="episodekort-tittel">{ep.tittel}</span>
-                {ferdig ? (
-                  <span className="episodekort-merke episodekort-merke--fullfort">Fullført</span>
-                ) : null}
-                {erNeste ? (
-                  <span className="episodekort-merke episodekort-merke--neste">Neste episode</span>
-                ) : null}
-                {valgfri && ulast && !ferdig ? (
-                  <span className="episodekort-merke episodekort-merke--aapen">Åpen</span>
+                {ferdig || erNeste || (valgfri && ulast && !ferdig) ? (
+                  <span
+                    className={`episodekort-merke episodekort-merke--${
+                      ferdig ? 'fullfort' : erNeste ? 'neste' : 'aapen'
+                    }`}
+                  >
+                    {statusEtikett(ferdig ? 'fullfort' : erNeste ? 'neste' : 'aapen', valgfri)}
+                  </span>
                 ) : null}
               </span>
               <p className="episodekort-tekst">
@@ -88,7 +94,7 @@ export function EpisodeVelger() {
                     ? 'Trykk for å fortsette her.'
                     : ulast
                       ? 'Trykk for å starte denne episoden.'
-                      : harFil
+                      : ep.fil
                         ? 'Låst. Fullfør episoden over først.'
                         : 'Låst.'}
               </p>
