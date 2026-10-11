@@ -102,7 +102,7 @@ export type EpisodeOversikt = z.infer<typeof episodeOversiktSkjema>
 export type Scenario = z.infer<typeof scenarioSkjema>
 export type MatchKrav = z.infer<typeof matchKravSkjema>
 export type Annonse = z.infer<typeof annonseSkjema>
-export type MatchSvar = 'passer' | 'passer_ikke' | 'vet_ikke'
+export type MatchSvar = 'passer' | 'passer_ikke'
 
 export const OPPSUMMERING_ID = 'oppsummering'
 export const SLUTT_ID = 'slutt'

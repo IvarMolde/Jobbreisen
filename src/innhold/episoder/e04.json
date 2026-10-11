@@ -227,7 +227,7 @@
           "id": "til-match-butikk",
           "tekst": "Vurder match mot butikken",
           "nesteSceneId": "e04-s03",
-          "tilbakemelding": "Velg passer, passer ikke eller vet ikke. Vet ikke er ikke det riktige svaret."
+          "tilbakemelding": "Velg passer eller passer ikke for hvert punkt."
         }
       ],
       "oppgaver": [
@@ -417,7 +417,7 @@
         {
           "type": "match_sjekkliste",
           "id": "e04-s03-ms",
-          "instruksjon": "For hvert krav: passer, passer ikke eller vet ikke. Trykk Sjekk match.",
+          "instruksjon": "For hvert krav: velg passer eller passer ikke. Trykk Sjekk match.",
           "annonseId": "havna-handel",
           "kategorier": [
             "kompetanse",
@@ -425,7 +425,7 @@
             "logistikk"
           ],
           "tilbakemeldingRiktig": "Riktig. Du har sett på personen, ikke på hva du selv liker.",
-          "tilbakemeldingFeil": "Se på personens erfaring, egenskaper og reisevei. «Vet ikke» teller ikke som riktig."
+          "tilbakemeldingFeil": "Se på personens erfaring, egenskaper og reisevei. Ikke alt passer."
         }
       ]
     },

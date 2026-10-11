@@ -50,7 +50,7 @@
           "id": "til-match",
           "tekst": "Vurder match",
           "nesteSceneId": "e06-s02",
-          "tilbakemelding": "Velg passer, passer ikke eller vet ikke. Vet ikke er ikke det riktige svaret."
+          "tilbakemelding": "Velg passer eller passer ikke for hvert punkt."
         }
       ],
       "oppgaver": [
@@ -231,7 +231,7 @@
             "logistikk"
           ],
           "tilbakemeldingRiktig": "Bra. Nå vet du hvilke CV-punkter som passer i søknaden.",
-          "tilbakemeldingFeil": "Se på personens erfaring og egenskaper. Vet ikke er ikke det riktige svaret."
+          "tilbakemeldingFeil": "Se på personens erfaring, egenskaper og reisevei."
         }
       ]
     },

@@ -49,14 +49,14 @@
         {
           "id": "hh-log",
           "kategori": "logistikk",
-          "tekst": "Jobb i sentrum. Ikke krav om førerkort. Også kveld.",
+          "tekst": "Jobb i sentrum. Arbeidstid også til klokka 22.00.",
           "fasit": {
-            "olena": "passer",
-            "taras": "passer",
+            "olena": "passer_ikke",
+            "taras": "passer_ikke",
             "sofiia": "passer"
           },
-          "forklaringPasser": "Du kommer deg til sentrum med buss. Du trenger ikke førerkort.",
-          "forklaringPasserIkke": "Reisen eller tiden passer dårlig."
+          "forklaringPasser": "Du bor i sentrum. Det er lettere å komme hjem etter klokka 22.00.",
+          "forklaringPasserIkke": "Sen kveld til klokka 22.00 kan være vanskelig med buss hjem fra sentrum."
         }
       ]
     },

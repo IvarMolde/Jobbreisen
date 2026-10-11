@@ -32,7 +32,7 @@ export function Matchvurdering({ krav, personId, svar, onSvar, visForklaring, di
             ))}
           </div>
           {visForklaring && svar[k.id] ? (
-            <p className="match-forklaring">{forklaringForKrav(k, personId, svar[k.id])}</p>
+            <p className="match-forklaring">{forklaringForKrav(k, personId)}</p>
           ) : null}
         </article>
       ))}
