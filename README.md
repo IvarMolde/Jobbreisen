@@ -6,6 +6,8 @@ Digitalt, interaktivt scenariospill på bokmål for voksne innvandrere på CEFR-
 
 Lærerveiledning: se [LAERERVEILEDNING.md](LAERERVEILEDNING.md).
 
+Status og oppfølging: se [STATUS.md](STATUS.md).
+
 ## Fase 1–6
 
 Fase 1 leverer:
