@@ -459,20 +459,20 @@
           "alternativer": [
             {
               "id": "a",
-              "tekst": "Førerkort eller styrke til å løfte"
+              "tekst": "Førerkort og styrke til å løfte ulike varer"
             },
             {
               "id": "b",
-              "tekst": "Bare sangstemme"
+              "tekst": "Bare erfaring fra kasse og kundeprat"
             },
             {
               "id": "c",
-              "tekst": "Bare en sykkelhjelm til kontoret"
+              "tekst": "Bare kontorerfaring og god e-post"
             }
           ],
           "riktigId": "a",
-          "tilbakemeldingRiktig": "Riktig. Lagerjobb kan kreve førerkort eller fysisk arbeid.",
-          "tilbakemeldingFeil": "Les annonsen om lagerkrav."
+          "tilbakemeldingRiktig": "Riktig. Lagerjobb krever ofte førerkort og fysisk arbeid.",
+          "tilbakemeldingFeil": "Les annonsen om lagerkrav: førerkort og løfting."
         },
         {
           "type": "ordbank",
