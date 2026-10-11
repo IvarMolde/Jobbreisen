@@ -358,7 +358,7 @@
           "type": "flervalg",
           "id": "e04-s03-fv1",
           "instruksjon": "Velg det riktige svaret.",
-          "spoersmal": "Hva sjekker du når du matcher en butikkjobb?",
+          "spoersmal": "Hvilke av disse punktene er lurt å sjekke når man skal søke jobb?",
           "alternativer": [
             {
               "id": "a",
@@ -366,16 +366,16 @@
             },
             {
               "id": "b",
-              "tekst": "Bare favorittfarge"
+              "tekst": "Bare lønn og ferie"
             },
             {
               "id": "c",
-              "tekst": "Bare vær"
+              "tekst": "Bare om butikken er fin"
             }
           ],
           "riktigId": "a",
           "tilbakemeldingRiktig": "Riktig. Match har flere deler.",
-          "tilbakemeldingFeil": "Se på kompetanse, egenskaper og logistikk."
+          "tilbakemeldingFeil": "Se på kompetanse, egenskaper og reise."
         },
         {
           "type": "ordbank",
