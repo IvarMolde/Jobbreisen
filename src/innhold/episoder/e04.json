@@ -441,7 +441,7 @@
         "bildeAlt": "Norsk førerkort klasse B på et bord.",
         "lyd": "e04-s04-lager.wav"
       },
-      "tekst": "Les annonsen fra Posten Bring i Årødalen.\n\nDu {{maa|må}} ha {{forerkort|førerkort}} klasse B.\n\n{{reisetid|Reisetid}} med buss til Årødalen er kort fra Årølia, lenger fra Kviltorp.",
+      "tekst": "Les annonsen fra Posten Bring i Årødalen. Dette er en lagerjobb. Her er det viktig å sjekke både krav og reisevei.\n\nDu {{maa|må}} ha {{forerkort|førerkort}} klasse B. Det er et strengt krav. Uten dette førerkortet kan du ikke få jobben.\n\n{{reisetid|Reisetid}} er hvor lang tid du bruker på veien til jobben. Med buss er turen til Årødalen kort hvis du bor i Årølia. Bor du på Kviltorp, tar turen lengre tid.",
       "valg": [
         {
           "id": "til-omsorg",
