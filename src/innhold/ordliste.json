@@ -621,6 +621,16 @@
       }
     },
     {
+      "id": "reise",
+      "ord": "reise",
+      "forklaring": "Hvordan du kommer deg til jobben, og om hverdagen går i hop: buss, bil, tid og familie.",
+      "oversettelser": {
+        "uk": "поїздка / дорога на роботу",
+        "en": "travel / commute",
+        "ar": "السفر / التنقل إلى العمل"
+      }
+    },
+    {
       "id": "kompetanse",
       "ord": "kompetanse",
       "forklaring": "Det du kan: erfaring, utdanning og sertifikater.",
