@@ -22,7 +22,7 @@
       "tekst": "Leste om statusene Skal søke, Sendt søknad, Innkalt til intervju og Avslag."
     },
     {
-      "tekst": "Øvde på datoer og preposisjoner med tid: den 12. oktober, innen fredag."
+      "tekst": "Øvde på ordenstall i datoer (12. = tolvte) og preposisjoner med tid: innen fredag."
     },
     {
       "tekst": "Registrerte de valgte jobbene med status Skal søke og riktig frist.",
@@ -159,7 +159,7 @@
         "bildeAlt": "En kalender med datoen den 12. oktober merket.",
         "lyd": "e05-s02-dato.wav"
       },
-      "tekst": "På norsk sier vi den 12. oktober.\n\nVi sier også 12.10.2026.\n\nSkriv {{frist|fristen}} fra annonsen.\n\nSøk {{innen}} den datoen.",
+      "tekst": "Når vi leser en dato høyt, bruker vi ordenstall.\n\nVi skriver 12. oktober. Vi sier tolvte oktober. Vi sier også den tolvte oktober.\n\nOrdenstall forteller hvilken plass dagen har i måneden:\n1. = første\n2. = andre\n3. = tredje\n4. = fjerde\n5. = femte\n…\n12. = tolvte\n21. = tjueførste\n\nVi kan også skrive datoen med tall: 12.10.2026. Da leser vi fortsatt tolvte oktober.\n\nSkriv {{frist|fristen}} fra annonsen.\n\nSøk {{innen}} den datoen.",
       "valg": [
         {
           "id": "til-registrer",
