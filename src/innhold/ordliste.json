@@ -383,7 +383,7 @@
     {
       "id": "match",
       "ord": "match",
-      "forklaring": "Når jobben passer til deg: kompetanse, egenskaper og reise.",
+      "forklaring": "Når jobben passer til deg: kompetanse, egenskaper og reisevei.",
       "oversettelser": {
         "uk": "відповідність",
         "en": "match",
@@ -621,13 +621,13 @@
       }
     },
     {
-      "id": "reise",
-      "ord": "reise",
-      "forklaring": "Hvordan du kommer deg til jobben, og om hverdagen går i hop: buss, bil, tid og familie.",
+      "id": "reisevei",
+      "ord": "reisevei",
+      "forklaring": "Veien til jobben: buss, bil, tid og om hverdagen går i hop med familie.",
       "oversettelser": {
-        "uk": "поїздка / дорога на роботу",
-        "en": "travel / commute",
-        "ar": "السفر / التنقل إلى العمل"
+        "uk": "шлях на роботу / дорога до роботи",
+        "en": "commute / way to work",
+        "ar": "طريق الذهاب إلى العمل"
       }
     },
     {
