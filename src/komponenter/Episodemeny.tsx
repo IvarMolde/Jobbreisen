@@ -25,7 +25,7 @@ function statusHjelp(status: EpisodeKortStatus, valgfri: boolean): string {
 }
 
 export function Episodemeny() {
-  const { innhold, fremdrift, startEpisode, episode, scene } = useSpill()
+  const { innhold, fremdrift, startEpisode, scene } = useSpill()
   const tittelId = useId()
   const aktivRef = useRef<HTMLLIElement | null>(null)
   const [mobilAapen, setMobilAapen] = useState(false)
