@@ -11,14 +11,15 @@
     "aktivitet",
     "frist",
     "innen",
-    "soknad"
+    "soknad",
+    "veileder"
   ],
   "oppsummering": [
     {
-      "tekst": "Åpnet Aktivitetsplanen på stor skjerm."
+      "tekst": "Lærte at Aktivitetsplanen er på NAV Min side."
     },
     {
-      "tekst": "Leste målet og statusene Skal søke, Sendt søknad, Innkalt til intervju og Avslag."
+      "tekst": "Leste om statusene Skal søke, Sendt søknad, Innkalt til intervju og Avslag."
     },
     {
       "tekst": "Øvde på datoer og preposisjoner med tid: den 12. oktober, innen fredag."
@@ -42,11 +43,11 @@
       "klokkeslett": "09:10",
       "app": "aktivitetsplan",
       "media": {
-        "bilde": "e05-s01-plan.svg",
-        "bildeAlt": "Aktivitetsplanen med mål, fire kolonner og jobbkort under Skal søke.",
+        "bilde": "e05-s01-plan.jpg",
+        "bildeAlt": "NAV Aktivitetsplan på Min side med mål, Legg til aktivitet og kolonnene Forslag, Planlegger og Gjennomfører.",
         "lyd": "e05-s01-plan.wav"
       },
-      "tekst": "Hva er {{aktivitet|Aktivitetsplanen}}?\n\nDet er en digital plan der du skriver opp det du skal gjøre for å få jobb. Du ser fire kolonner: Skal søke, Sendt søknad, Innkalt til intervju og Avslag.\n\nI Jobbreisen øver du på denne planen. Det er ikke ekte NAV.\n\nTrykk «Åpne på stor skjerm» på telefonen. Der registrerer du jobbene senere.\n\nLes {{frist|fristen}} i annonsen. Søk {{innen}} datoen.",
+      "tekst": "Hva er {{aktivitet|Aktivitetsplanen}}?\n\nAktivitetsplanen er en digital plan på nettsiden til NAV. Du finner den under «Min side».\n\nDer skal du registrere alt du gjør for å finne jobb. For eksempel: alle {{soknad|jobbsøknader}} du sender på nett, eller leverer selv hos en bedrift.\n\nDa blir det lettere for {{veileder|veilederen}} din å følge med på hva du gjør. Du får også bedre oversikt over jobbene du søker på.\n\nNår du får jobb, trenger du ikke å registrere mer i Aktivitetsplanen.\n\nI Jobbreisen øver du på planen. Dette er ikke ekte NAV.\n\nDu ser fire kolonner: Skal søke, Sendt søknad, Innkalt til intervju og Avslag.\n\nTrykk «Åpne Aktivitetsplanen» eller «Åpne på stor skjerm». Der registrerer du jobbene senere.\n\nLes {{frist|fristen}} i annonsen. Søk {{innen}} datoen.",
       "valg": [
         {
           "id": "til-dato",
