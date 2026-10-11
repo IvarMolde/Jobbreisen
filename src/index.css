@@ -194,6 +194,56 @@ a {
   margin-bottom: 0.75rem;
 }
 
+.magasin-valg-status {
+  margin: 0 0 0.65rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  background: #e8f4fb;
+  color: var(--marine);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.magasin-annonse--valgt {
+  border-color: #146c43;
+  box-shadow: 0 0 0 2px rgba(20, 108, 67, 0.25);
+  background: #f3faf5;
+}
+
+.magasin-valg-handlinger {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.magasin-valg-bekreft {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.magasin-valg-hjelp {
+  margin: 0;
+  color: var(--dempet);
+  font-size: 0.85rem;
+}
+
+.velg-jobber-status {
+  margin: 0 0 0.55rem;
+  font-weight: 700;
+  color: var(--marine);
+}
+
+.velg-jobber-valgt,
+.valggruppe .knapp.velg-jobber-valgt[aria-pressed='true'] {
+  background: #d8f3dc;
+  border-color: #146c43;
+  color: #14532d;
+  font-weight: 700;
+}
+
 .advarsel {
   color: var(--feil);
   font-weight: 700;

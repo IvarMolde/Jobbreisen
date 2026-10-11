@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Annonse, Person, VelgJobberOppgave } from '../../modell/typer'
 import { TilbakemeldingBoks } from './TilbakemeldingBoks'
 
@@ -21,15 +21,27 @@ export function VelgJobber({
   onSvar,
   onVelgJobber,
 }: Props) {
-  const [valgte, setValgte] = useState<string[]>(ferdig ? valgteJobber : [])
+  const [valgte, setValgte] = useState<string[]>(valgteJobber)
   const [status, setStatus] = useState<'ok' | 'feil' | null>(ferdig ? 'ok' : null)
+
+  useEffect(() => {
+    setValgte(valgteJobber)
+  }, [valgteJobber])
+
+  useEffect(() => {
+    if (ferdig) setStatus('ok')
+  }, [ferdig])
 
   const toggle = (id: string) => {
     if (status === 'ok') return
     setValgte((forrige) => {
-      if (forrige.includes(id)) return forrige.filter((x) => x !== id)
-      if (forrige.length >= oppgave.max) return forrige
-      return [...forrige, id]
+      const neste = forrige.includes(id)
+        ? forrige.filter((x) => x !== id)
+        : forrige.length >= oppgave.max
+          ? forrige
+          : [...forrige, id]
+      onVelgJobber(neste, [])
+      return neste
     })
   }
 
@@ -42,23 +54,31 @@ export function VelgJobber({
   }
 
   return (
-    <div>
+    <div className="velg-jobber">
       <p>
-        Velg {oppgave.min}–{oppgave.max} jobber som kan passe {person.fornavn}.
+        Velg {oppgave.min}–{oppgave.max} jobber som kan passe {person.fornavn}. Du kan også velge
+        stillingene i Jobbmagasinet på telefonen.
+      </p>
+      <p className="velg-jobber-status" role="status">
+        Valgt: {valgte.length} av {oppgave.min}–{oppgave.max}
       </p>
       <div className="valggruppe">
-        {annonser.map((a) => (
-          <button
-            key={a.id}
-            type="button"
-            className="knapp knapp-sekundaer"
-            aria-pressed={valgte.includes(a.id)}
-            disabled={status === 'ok'}
-            onClick={() => toggle(a.id)}
-          >
-            {a.tittel} · {a.bedrift}
-          </button>
-        ))}
+        {annonser.map((a) => {
+          const erValgt = valgte.includes(a.id)
+          return (
+            <button
+              key={a.id}
+              type="button"
+              className={`knapp knapp-sekundaer${erValgt ? ' velg-jobber-valgt' : ''}`}
+              aria-pressed={erValgt}
+              disabled={status === 'ok'}
+              onClick={() => toggle(a.id)}
+            >
+              {erValgt ? '✓ ' : ''}
+              {a.tittel} · {a.bedrift}
+            </button>
+          )
+        })}
       </div>
       <button type="button" className="knapp" disabled={status === 'ok'} onClick={lagre}>
         Gå videre med disse jobbene

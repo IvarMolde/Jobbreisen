@@ -9,9 +9,29 @@ interface Props {
   startId: string | null
   onVelgOrd: (id: string) => void
   onBytt: (id: string) => void
+  /** Når true: eleven kan velge stillinger å ta videre i spillet */
+  kanVelge?: boolean
+  valgteJobber?: string[]
+  minValg?: number
+  maxValg?: number
+  valgFerdig?: boolean
+  onToggleJobb?: (id: string) => void
+  onBekreftValg?: () => void
 }
 
-export function Jobbmagasin({ annonser, startId, onVelgOrd, onBytt }: Props) {
+export function Jobbmagasin({
+  annonser,
+  startId,
+  onVelgOrd,
+  onBytt,
+  kanVelge = false,
+  valgteJobber = [],
+  minValg = 2,
+  maxValg = 3,
+  valgFerdig = false,
+  onToggleJobb,
+  onBekreftValg,
+}: Props) {
   const startIndeks = Math.max(
     0,
     annonser.findIndex((a) => a.id === startId),
@@ -38,6 +58,11 @@ export function Jobbmagasin({ annonser, startId, onVelgOrd, onBytt }: Props) {
     if (id) onBytt(id)
   }
 
+  const erValgt = valgteJobber.includes(annonse.id)
+  const antall = valgteJobber.length
+  const kanBekrefte = antall >= minValg && antall <= maxValg
+  const fullt = antall >= maxValg && !erValgt
+
   return (
     <div>
       <header className="hjem-hode">
@@ -54,7 +79,16 @@ export function Jobbmagasin({ annonser, startId, onVelgOrd, onBytt }: Props) {
           Neste
         </button>
       </div>
-      <article className="kort">
+
+      {kanVelge ? (
+        <p className="magasin-valg-status" role="status">
+          {valgFerdig
+            ? `Lagret: ${antall} stillinger valgt.`
+            : `Valgt: ${antall} av ${minValg}–${maxValg}`}
+        </p>
+      ) : null}
+
+      <article className={`kort${erValgt ? ' magasin-annonse--valgt' : ''}`}>
         <SceneBilde
           key={annonse.id}
           fil={annonse.bilde}
@@ -79,7 +113,48 @@ export function Jobbmagasin({ annonser, startId, onVelgOrd, onBytt }: Props) {
           </li>
         </ul>
         <KlikkbarTekst tekst={annonse.tekst} onVelgOrd={onVelgOrd} />
+
+        {kanVelge ? (
+          <div className="magasin-valg-handlinger">
+            <button
+              type="button"
+              className={`knapp ${erValgt ? 'knapp-amber' : 'knapp-sekundaer'}`}
+              aria-pressed={erValgt}
+              disabled={valgFerdig || (fullt && !erValgt)}
+              onClick={() => onToggleJobb?.(annonse.id)}
+            >
+              {erValgt ? '✓ Valgt – trykk for å fjerne' : 'Velg denne stillingen'}
+            </button>
+            {fullt && !erValgt && !valgFerdig ? (
+              <p className="magasin-valg-hjelp">Du har valgt {maxValg} stillinger. Fjern en før du velger en ny.</p>
+            ) : null}
+          </div>
+        ) : null}
       </article>
+
+      {kanVelge && !valgFerdig ? (
+        <div className="magasin-valg-bekreft">
+          <button
+            type="button"
+            className="knapp"
+            disabled={!kanBekrefte}
+            onClick={() => onBekreftValg?.()}
+          >
+            Gå videre med disse jobbene
+          </button>
+          {!kanBekrefte ? (
+            <p className="magasin-valg-hjelp">Velg {minValg} eller {maxValg} stillinger først.</p>
+          ) : (
+            <p className="magasin-valg-hjelp">Da lagres valget i spillet.</p>
+          )}
+        </div>
+      ) : null}
+
+      {kanVelge && valgFerdig ? (
+        <p className="tilbakemelding ok" role="status">
+          Valget er lagret. Du bruker disse jobbene senere i spillet.
+        </p>
+      ) : null}
     </div>
   )
 }

@@ -33,9 +33,38 @@ export function Telefon() {
     velgMorsmal,
     velgOrd,
     settMagasinAnnonse,
+    settValgteJobber,
+    registrerOppgave,
     nullstill,
     tilbakeTilEpisoder,
   } = useSpill()
+
+  const velgJobberOppgave = scene?.oppgaver.find((o) => o.type === 'velg_jobber')
+  const kanVelgeJobber = Boolean(velgJobberOppgave)
+  const valgFerdig = Boolean(
+    velgJobberOppgave &&
+      fremdrift.oppgaver.some((o) => o.oppgaveId === velgJobberOppgave.id && o.riktig),
+  )
+
+  const toggleValgtJobb = (id: string) => {
+    if (!velgJobberOppgave || valgFerdig) return
+    const max = velgJobberOppgave.max
+    const forrige = fremdrift.valgteJobber
+    const neste = forrige.includes(id)
+      ? forrige.filter((x) => x !== id)
+      : forrige.length >= max
+        ? forrige
+        : [...forrige, id]
+    settValgteJobber(neste, [])
+  }
+
+  const bekreftValgteJobber = () => {
+    if (!velgJobberOppgave || valgFerdig) return
+    const antall = fremdrift.valgteJobber.length
+    if (antall < velgJobberOppgave.min || antall > velgJobberOppgave.max) return
+    settValgteJobber(fremdrift.valgteJobber, velgJobberOppgave.flagg ?? ['valgte_jobber'])
+    registrerOppgave(velgJobberOppgave.id, 'velg_jobber', true)
+  }
 
   const app = fremdrift.aktivApp
   const ulesteSms = fremdrift.varsler.filter((v) => !v.lest && v.type === 'sms').length
@@ -171,6 +200,13 @@ export function Telefon() {
                 startId={scene?.annonseId ?? fremdrift.magasinAnnonseId}
                 onVelgOrd={velgOrd}
                 onBytt={settMagasinAnnonse}
+                kanVelge={kanVelgeJobber}
+                valgteJobber={fremdrift.valgteJobber}
+                minValg={velgJobberOppgave?.min}
+                maxValg={velgJobberOppgave?.max}
+                valgFerdig={valgFerdig}
+                onToggleJobb={toggleValgtJobb}
+                onBekreftValg={bekreftValgteJobber}
               />
             ) : null}
             {app === 'aktivitetsplan' ? (
