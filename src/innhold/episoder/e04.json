@@ -536,8 +536,8 @@
       "app": "jobbmagasin",
       "annonseId": "molde-omsorg",
       "media": {
-        "bilde": "e04-s05-omsorg.svg",
-        "bildeAlt": "Hjemmetjeneste i Molde sentrum.",
+        "bilde": "e04-s05-omsorg.jpg",
+        "bildeAlt": "Kirkebakken: pleieassistenter hjelper en eldre mann hjemme.",
         "lyd": "e04-s05-omsorg.wav"
       },
       "tekst": "Kirkebakken søker pleieassistent. Les annonsen godt, og tenk på om jobben passer for deg.\n\nDu {{bor|bør}} like å hjelpe eldre. Førstehjelp er en {{fordel}}. Det er positivt hvis du har det, men det er ikke et strengt krav.\n\nJobben er {{deltid}}. Det betyr at du jobber mindre enn 100 %. Du kan for eksempel ha en fast stilling på 70 %, eller jobbe helgevakter. Det motsatte av deltid er {{heltid}}. Da jobber du 100 %.\n\nVed Kirkebakken trenger du ikke {{forerkort|førerkort}}.",

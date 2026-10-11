@@ -1404,6 +1404,34 @@ a {
   min-height: 180px;
 }
 
+.scene-bilde-knapp:has(.scene-bilde[src*='e04-s05-omsorg']) {
+  border: 2px solid var(--marine);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--marine);
+}
+
+.scene-bilde-knapp:has(.scene-bilde[src*='e04-s05-omsorg'])::before {
+  content: 'Kirkebakken';
+  display: block;
+  padding: 0.45rem 0.75rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.scene-bilde[src*='e04-s05-omsorg'] {
+  aspect-ratio: 1024 / 571;
+  object-fit: cover;
+  object-position: center center;
+  background: #d9e6ee;
+  min-height: 180px;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
 /* Bunnpris-plakat i Jobbmagasinet – flat plakat fyller containeren */
 .app-innhold .scene-bilde[src*='annonse-havna'] {
   aspect-ratio: 509 / 645;
