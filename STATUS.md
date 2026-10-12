@@ -97,6 +97,6 @@ Oppdater merknader når du finner hull (bilde / tekst / lyd / oppgave).
 
 ## Nyttige lenker
 
-- Spill (Pages): https://ivarmolde.github.io/scanario_jobb/
+- Spill (Pages): https://ivarmolde.github.io/Jobbreisen/
 - [README.md](README.md) · [LAERERVEILEDNING.md](LAERERVEILEDNING.md) · [INNSPILLING.md](INNSPILLING.md)
-- Repo: `scanario_jobb` (obs. stavemåte i URL)
+- Repo: `Jobbreisen`
