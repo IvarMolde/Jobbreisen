@@ -159,7 +159,7 @@
         "bildeAlt": "En kalender med datoen den 12. oktober merket.",
         "lyd": "e05-s02-dato.wav"
       },
-      "tekst": "Når vi leser en dato høyt, bruker vi ordenstall.\n\nVi skriver 12. oktober. Vi sier tolvte oktober. Vi sier også den tolvte oktober.\n\nOrdenstall forteller hvilken plass dagen har i måneden:\n1. = første\n2. = andre\n3. = tredje\n4. = fjerde\n5. = femte\n…\n12. = tolvte\n21. = tjueførste\n\nVi kan også skrive datoen med tall: 12.10.2026. Da leser vi fortsatt tolvte oktober.\n\nSkriv {{frist|fristen}} fra annonsen.\n\nSøk {{innen}} den datoen.",
+      "tekst": "Når vi leser en dato høyt, bruker vi ordenstall.\n\nVi skriver 12. oktober. Vi sier tolvte oktober. Vi sier også den tolvte oktober.\n\nOrdenstall forteller hvilken plass dagen har i måneden. Et ordenstall forteller hvilken plass noe har i en rekkefølge. Det kan for eksempel være en dato, en etasje i et hus eller en plassering i en konkurranse.\n\nUnder kan dere se noen ordenstall. Kanskje du kan flere.\n1. = første\n2. = andre\n3. = tredje\n4. = fjerde\n5. = femte\n…\n12. = tolvte\n21. = tjueførste\n\nVi kan også skrive datoen med tall: 12.10.2026. Da leser vi fortsatt tolvte oktober.\n\nSkriv {{frist|fristen}} fra annonsen.\n\nSøk {{innen}} den datoen.",
       "valg": [
         {
           "id": "til-registrer",
@@ -169,6 +169,72 @@
         }
       ],
       "oppgaver": [
+        {
+          "type": "skriv_svar",
+          "id": "e05-s02-sv-a",
+          "instruksjon": "Skriv ordenstallet med bokstaver.",
+          "spoersmal": "a) 5. = _____",
+          "hint": "f.eks. første",
+          "riktigeSvar": [
+            "femte"
+          ],
+          "normalisering": "tekst",
+          "tilbakemeldingRiktig": "Riktig. 5. = femte.",
+          "tilbakemeldingFeil": "Vi sier femte. Skriv: femte."
+        },
+        {
+          "type": "skriv_svar",
+          "id": "e05-s02-sv-b",
+          "instruksjon": "Skriv ordenstallet med bokstaver.",
+          "spoersmal": "b) 4. = _____",
+          "hint": "f.eks. første",
+          "riktigeSvar": [
+            "fjerde"
+          ],
+          "normalisering": "tekst",
+          "tilbakemeldingRiktig": "Riktig. 4. = fjerde.",
+          "tilbakemeldingFeil": "Vi sier fjerde. Skriv: fjerde."
+        },
+        {
+          "type": "skriv_svar",
+          "id": "e05-s02-sv-c",
+          "instruksjon": "Skriv ordenstallet med bokstaver.",
+          "spoersmal": "c) 7. = _____",
+          "hint": "f.eks. første",
+          "riktigeSvar": [
+            "sjuende",
+            "syvende"
+          ],
+          "normalisering": "tekst",
+          "tilbakemeldingRiktig": "Riktig. 7. = sjuende (eller syvende).",
+          "tilbakemeldingFeil": "Vi sier sjuende eller syvende. Begge er riktige."
+        },
+        {
+          "type": "skriv_svar",
+          "id": "e05-s02-sv-d",
+          "instruksjon": "Skriv ordenstallet med bokstaver.",
+          "spoersmal": "d) 8. = _____",
+          "hint": "f.eks. første",
+          "riktigeSvar": [
+            "åttende"
+          ],
+          "normalisering": "tekst",
+          "tilbakemeldingRiktig": "Riktig. 8. = åttende.",
+          "tilbakemeldingFeil": "Vi sier åttende. Skriv: åttende."
+        },
+        {
+          "type": "skriv_svar",
+          "id": "e05-s02-sv-e",
+          "instruksjon": "Skriv ordenstallet med bokstaver.",
+          "spoersmal": "e) 10. = _____",
+          "hint": "f.eks. første",
+          "riktigeSvar": [
+            "tiende"
+          ],
+          "normalisering": "tekst",
+          "tilbakemeldingRiktig": "Riktig. 10. = tiende.",
+          "tilbakemeldingFeil": "Vi sier tiende. Skriv: tiende."
+        },
         {
           "type": "ordbank",
           "id": "e05-s02-ob",

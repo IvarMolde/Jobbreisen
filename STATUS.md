@@ -21,7 +21,7 @@ Levende oversikt over hva som er ferdig, hva du bør sjekke, og hva som bør gj�
 - [x] Telefon-Aktivitetsplan speiler kortene live
 - [x] Scenebilde `e05-s01-plan.jpg` (NAV Min side / Aktivitetsplan)
 - [x] A2-tekst: Aktivitetsplanen på NAV, Min side, veileder, søknader
-- [x] A2-tekst: ordenstall i datoer (e05-s02)
+- [x] A2-tekst: ordenstall i datoer (e05-s02), med skriv-oppgave a–e
 - [x] Telefon-kort: tekst brytes inne i kortet, bedre kontrast
 - [x] GitHub Pages-bygg fikset (TypeScript i `RegistrerAktiviteter`)
 
