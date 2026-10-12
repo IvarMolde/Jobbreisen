@@ -9,7 +9,7 @@ Levende oversikt over hva som er ferdig, hva du bør sjekke, og hva som bør gj�
 3. Flytt punkter mellom **Ferdig**, **Bør snart** og **Senere** etter hvert som arbeidet går.
 4. Hold punktene korte — detaljer ligger i kode, episoder og commit-historikk.
 
-**Sist oppdatert:** 2026-10-11
+**Sist oppdatert:** 2026-10-12
 
 ---
 
