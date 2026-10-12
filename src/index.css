@@ -1455,6 +1455,23 @@ a {
   margin-bottom: 0;
 }
 
+.scene-bilde-knapp:has(.scene-bilde[src*='e05-s02-dato']) {
+  border: 2px solid var(--marine);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e8eef2;
+}
+
+.scene-bilde[src*='e05-s02-dato.jpg'] {
+  aspect-ratio: 1200 / 1000;
+  object-fit: cover;
+  object-position: center center;
+  background: #e8eef2;
+  min-height: 200px;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
 .scene-bilde[src*='e04-s03-match'] {
   aspect-ratio: 962 / 1024;
   object-fit: cover;

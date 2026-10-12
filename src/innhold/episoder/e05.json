@@ -155,8 +155,8 @@
       "klokkeslett": "09:20",
       "app": "aktivitetsplan",
       "media": {
-        "bilde": "e05-s02-dato.svg",
-        "bildeAlt": "En kalender med datoen den 12. oktober merket.",
+        "bilde": "e05-s02-dato.jpg",
+        "bildeAlt": "En bordkalender som viser 12. oktober under overskriften Dato.",
         "lyd": "e05-s02-dato.wav"
       },
       "tekst": "Når vi leser en dato høyt, bruker vi ordenstall.\n\nVi skriver 12. oktober. Vi sier tolvte oktober. Vi sier også den tolvte oktober.\n\nOrdenstall forteller hvilken plass dagen har i måneden. Et ordenstall forteller hvilken plass noe har i en rekkefølge. Det kan for eksempel være en dato, en etasje i et hus eller en plassering i en konkurranse.\n\nUnder kan dere se noen ordenstall. Kanskje du kan flere.\n1. = første\n2. = andre\n3. = tredje\n4. = fjerde\n5. = femte\n…\n12. = tolvte\n21. = tjueførste\n\nVi kan også skrive datoen med tall: 12.10.2026. Da leser vi fortsatt tolvte oktober.\n\nSkriv {{frist|fristen}} fra annonsen.\n\nSøk {{innen}} den datoen.",

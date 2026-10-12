@@ -53,6 +53,7 @@ const filer: Array<[string, string, string, string]> = [
   ['annonse-bygg.svg', 'Hjelpearbeider Jatre', 'Jatre', 'Hjelpearbeider'],
   ['annonse-solsiden.svg', 'Miljøarbeider Bekkevoll', 'Bekkevoll ungdomsskole', 'Miljøarbeider'],
   ['e05-s01-plan.svg', 'Aktivitetsplan med fire statuskolonner', 'Aktivitetsplan', 'Skal søke · frist'],
+  // e05-s02-dato.jpg er opplastet bordkalender (12. oktober) i Dato-ramme – ikke overskriv
   ['e05-s02-dato.svg', 'Kalender med den 12. oktober', 'Dato', 'den 12. oktober'],
   ['e05-s03-skjema.svg', 'Skjema med stjerne ved status og frist', 'Registrer', 'Velg status *'],
   ['e05-s04-sms.svg', 'Melding til veileder Linn Holm', 'Melding', 'Hei Linn'],
